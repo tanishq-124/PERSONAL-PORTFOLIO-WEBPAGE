@@ -6,15 +6,15 @@
 }
 body {
   font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
   background: url('https://img.freepik.com/premium-photo/top-view-dark-stylish-workplace-with-smartphone-office-supplies_67155-2963.jpg') center/cover fixed no-repeat;
-  color: #333;
+  color: #fff;
   scroll-behavior: smooth;
+  position: relative;
 }
 
 /* Header */
 header {
-  background: #111;
+  background: rgba(0, 0, 0, 0.8);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
@@ -46,15 +46,32 @@ nav {
   color: #00bcd4;
 }
 
-/* Hero */
+/* Hero Section with Background and Overlay */
 .hero {
-  height: 90vh;
-  background: url('https://e0.pxfuel.com/wallpapers/846/344/desktop-wallpaper-portfolio.jpg') center/cover no-repeat;
+  height: 100vh;
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
   text-align: center;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+.hero {
+  background: url('https://e0.pxfuel.com/wallpapers/846/344/desktop-wallpaper-portfolio.jpg') center/cover no-repeat;
+}
+.hero-content {
+  z-index: 2;
+  color: #fff;
 }
 .hero-content h1 {
   font-size: 3rem;
@@ -77,19 +94,25 @@ nav {
   background: #008fa1;
 }
 
-/* Sections */
+/* Section Wrapper Overlay */
 section {
   padding: 60px 20px;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.85); /* semi-transparent to show background */
-  margin: 20px auto;
-  border-radius: 12px;
-  width: 95%;
-  max-width: 1200px;
+  position: relative;
+  z-index: 1;
 }
-.about, .projects, .contact {
-  background: transparent;
+.about,
+.projects,
+.contact {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 15px;
+  margin: 20px;
+  padding: 30px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  color: #fff;
 }
+
+/* Skills */
 .skills {
   list-style: none;
   display: flex;
@@ -100,7 +123,8 @@ section {
 .skills li {
   margin: 5px 10px;
   padding: 5px 15px;
-  background: #e0f7fa;
+  background: #00bcd4;
+  color: black;
   border-radius: 5px;
 }
 
@@ -112,34 +136,10 @@ section {
   margin-top: 2rem;
 }
 .card {
-  background: #f0f0f0;
+  background: rgba(255, 255, 255, 0.1);
   padding: 1rem;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  backdrop-filter: blur(4px);
 }
 .card h3 {
-  margin-bottom: 0.5rem;
-}
-.card a {
-  color: #00bcd4;
-  text-decoration: none;
-}
-.card a:hover {
-  text-decoration: underline;
-}
-
-/* Contact */
-.social-icons a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #00bcd4;
-  font-weight: bold;
-}
-
-/* Footer */
-footer {
-  background: #111;
-  color: #ccc;
-  padding: 20px;
-  text-align: center;
-}
+  margin-bot
