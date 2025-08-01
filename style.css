@@ -7,12 +7,12 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   line-height: 1.6;
-  background: #f9f9f9;
+  background: #f4f4f4;
   color: #333;
   scroll-behavior: smooth;
 }
 
-/* Navigation */
+/* Header */
 header {
   background: #111;
   padding: 1rem 2rem;
@@ -25,7 +25,7 @@ nav {
   justify-content: space-between;
   align-items: center;
 }
-nav .logo {
+.logo {
   color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
@@ -46,29 +46,28 @@ nav .logo {
   color: #00bcd4;
 }
 
-/* Hero Section */
+/* Hero */
 .hero {
-  background: url('images/hero-bg.jpg') center/cover no-repeat;
   height: 90vh;
+  background: url('https://i.pinimg.com/1200x/7e/62/33/7e6233774b1d98d1459d41a053104727.jpg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.hero-content {
-  text-align: center;
   color: white;
+  text-align: center;
 }
 .hero-content h1 {
   font-size: 3rem;
 }
 .hero-content p {
-  font-size: 1.2rem;
   margin: 1rem 0;
 }
 .btn {
+  display: inline-block;
+  margin-top: 1rem;
   padding: 10px 20px;
   background: #00bcd4;
-  color: #fff;
+  color: white;
   border: none;
   text-decoration: none;
   border-radius: 5px;
@@ -91,11 +90,11 @@ section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 1rem 0;
+  margin-top: 10px;
 }
 .skills li {
   margin: 5px 10px;
-  padding: 5px 10px;
+  padding: 5px 15px;
   background: #e0f7fa;
   border-radius: 5px;
 }
@@ -112,12 +111,15 @@ section {
   padding: 1rem;
   border-radius: 8px;
 }
-.card img {
-  width: 100%;
-  border-radius: 5px;
-}
 .card h3 {
-  margin: 1rem 0 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.card a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+.card a:hover {
+  text-decoration: underline;
 }
 
 /* Contact */
@@ -134,20 +136,4 @@ footer {
   color: #ccc;
   padding: 20px;
   text-align: center;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    background: #111;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    display: none;
-  }
-  .nav-links.active {
-    display: flex;
-  }
 }
