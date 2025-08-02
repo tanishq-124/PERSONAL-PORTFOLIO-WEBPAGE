@@ -29,7 +29,7 @@
         </div>
     </section>
 
-    <!-- About Me Section -->
+    <!-- About Me -->
     <section id="about" class="portrait">
         <h2 class="animated-heading">About Me</h2>
         <ul class="about-points">
@@ -39,9 +39,29 @@
             <li><span class="highlight">Current Goal:</span> Expanding to Full-Stack Development and exploring advanced frameworks.</li>
             <li><span class="highlight">Career Vision:</span> To contribute to impactful projects that blend creativity, innovation, and technology.</li>
         </ul>
+        <!-- Skills Progress -->
+        <div class="skills">
+            <h3 class="skills-heading">My Skills</h3>
+            <div class="skill">
+                <span>HTML & CSS</span>
+                <div class="progress"><div class="progress-bar" style="--width: 90%"></div></div>
+            </div>
+            <div class="skill">
+                <span>JavaScript</span>
+                <div class="progress"><div class="progress-bar" style="--width: 75%"></div></div>
+            </div>
+            <div class="skill">
+                <span>UI/UX Design</span>
+                <div class="progress"><div class="progress-bar" style="--width: 80%"></div></div>
+            </div>
+            <div class="skill">
+                <span>AI-Powered Tools</span>
+                <div class="progress"><div class="progress-bar" style="--width: 65%"></div></div>
+            </div>
+        </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects -->
     <section id="projects" class="portrait">
         <h2 class="animated-heading">My Projects</h2>
         <div class="project-grid">
@@ -60,7 +80,7 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="portrait">
         <h2 class="animated-heading">Contact Me</h2>
         <p>Email: <a href="mailto:tanishqagrawal1112@gmail.com">tanishqagrawal1112@gmail.com</a></p>
@@ -72,22 +92,27 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2025 Tanishq Agrawal. All Rights Reserved.</p>
     </footer>
 
-    <!-- Back to Top Button -->
     <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
     <script>
-        // Portrait Animation on Scroll
+        // Portrait animation on scroll
         const portraits = document.querySelectorAll('.portrait');
+        const progressBars = document.querySelectorAll('.progress-bar');
         window.addEventListener('scroll', () => {
-            portraits.forEach((el) => {
+            portraits.forEach(el => {
                 const rect = el.getBoundingClientRect();
                 if (rect.top < window.innerHeight - 100) {
                     el.classList.add('visible');
+                }
+            });
+            progressBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    bar.style.width = bar.style.getPropertyValue('--width');
                 }
             });
         });
