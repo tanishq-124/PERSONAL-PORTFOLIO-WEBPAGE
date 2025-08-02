@@ -21,76 +21,56 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content portrait">
+    <section class="hero portrait">
+        <div class="hero-content">
             <h2>Hi, I'm <span class="highlight">Tanishq</span></h2>
-            <p>A <span class="highlight">passionate developer</span> crafting modern web experiences.</p>
+            <p>A <span class="highlight">Passionate Developer</span> crafting modern web experiences.</p>
             <a href="resume.pdf" download class="btn">Download Resume</a>
         </div>
     </section>
 
-    <!-- Unified Background for About, Projects, Contact -->
-    <div class="content-wrapper">
-        <div class="overlay"></div>
+    <!-- About Me Section -->
+    <section id="about" class="portrait">
+        <h2 class="animated-heading">About Me</h2>
+        <ul class="about-points">
+            <li><span class="highlight">Role:</span> Web Developer focused on responsive and interactive web applications.</li>
+            <li><span class="highlight">Core Skills:</span> HTML, CSS, JavaScript, UI/UX Design, and AI-Powered Web Solutions.</li>
+            <li><span class="highlight">Strengths:</span> Modern UI design, problem-solving, and creating scalable front-end architectures.</li>
+            <li><span class="highlight">Current Goal:</span> Expanding to Full-Stack Development and exploring advanced frameworks.</li>
+            <li><span class="highlight">Career Vision:</span> To contribute to impactful projects that blend creativity, innovation, and technology.</li>
+        </ul>
+    </section>
 
-        <!-- About Section -->
-        <section id="about" class="portrait">
-            <h2 class="animated-heading">About Me</h2>
-            <p>
-                I am a <span class="highlight">web developer</span> passionate about creating 
-                <span class="highlight">modern, responsive, and interactive applications</span>. 
-                With a strong foundation in <span class="highlight">HTML, CSS, and JavaScript</span>, 
-                I specialize in building user-friendly interfaces and exploring 
-                <span class="highlight">AI-powered solutions</span>.
-            </p>
-            <p>
-                My focus areas include <span class="highlight">front-end development</span>, 
-                <span class="highlight">UI/UX design</span>, and gradually expanding into 
-                <span class="highlight">full-stack development</span>.
-            </p>
-            <p>
-                <span class="highlight">Career Goal:</span> To work on impactful projects that blend 
-                creativity and technology while continuously learning and innovating.
-            </p>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="portrait">
-            <h2 class="animated-heading">My Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>E-LEARNING-PLATFORM-UI</h3>
-                    <a href="https://tanishq-124.github.io/E-LEARNING-PLATFORM-UI/" target="_blank">Live Demo</a>
-                </div>
-                <div class="project-card">
-                    <h3>INTERACTIVE-QUIZ-APPLICATION</h3>
-                    <a href="https://tanishq-124.github.io/INTERACTIVE-QUIZ-APPLICATION/" target="_blank">Live Demo</a>
-                </div>
-                <div class="project-card">
-                    <h3>Smart AI Search Portal</h3>
-                    <a href="https://tanishq-124.github.io/cs50_project1/" target="_blank">Live Demo</a>
-                </div>
+    <!-- Projects Section -->
+    <section id="projects" class="portrait">
+        <h2 class="animated-heading">My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>E-LEARNING-PLATFORM-UI</h3>
+                <a href="https://tanishq-124.github.io/E-LEARNING-PLATFORM-UI/" target="_blank">Live Demo</a>
             </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="portrait">
-            <h2 class="animated-heading">Contact Me</h2>
-            <p>Email: <a href="mailto:tanishqagrawal1112@gmail.com">tanishqagrawal1112@gmail.com</a></p>
-            <p>Phone: <a href="tel:+91930113XXXX">+91 930113XXXX</a></p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/tanishq-agrawal-91a505335" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/tanishq-124" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.instagram.com/tanishq_agrawal_11?igsh=YmtibTEwcDFsd3No" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
+            <div class="project-card">
+                <h3>INTERACTIVE-QUIZ-APPLICATION</h3>
+                <a href="https://tanishq-124.github.io/INTERACTIVE-QUIZ-APPLICATION/" target="_blank">Live Demo</a>
             </div>
-        </section>
-    </div>
+            <div class="project-card">
+                <h3>Smart AI Search Portal</h3>
+                <a href="https://tanishq-124.github.io/cs50_project1/" target="_blank">Live Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="portrait">
+        <h2 class="animated-heading">Contact Me</h2>
+        <p>Email: <a href="mailto:tanishqagrawal1112@gmail.com">tanishqagrawal1112@gmail.com</a></p>
+        <p>Phone: <a href="tel:+91930113XXXX">+91 930113XXXX</a></p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/tanishq-agrawal-91a505335" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/tanishq-124" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/tanishq_agrawal_11?igsh=YmtibTEwcDFsd3No" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
@@ -115,11 +95,7 @@
         // Back to Top Button
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 200) {
-                backToTop.style.display = 'block';
-            } else {
-                backToTop.style.display = 'none';
-            }
+            backToTop.style.display = window.scrollY > 200 ? 'block' : 'none';
         });
         backToTop.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
