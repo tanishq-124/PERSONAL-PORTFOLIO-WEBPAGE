@@ -8,25 +8,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Background Layers -->
+    <!-- Fixed Background Image -->
     <div id="background"></div>
+    <!-- Moving Particles -->
     <div id="particles-js"></div>
 
-    <!-- Navigation (Centered) -->
+    <!-- Navigation -->
     <header>
+        <h1 class="logo">Tanishq Agrawal</h1>
         <nav>
             <ul class="nav-links">
-                <li><a href="#about" class="nav-item">About</a></li>
-                <li><a href="#projects" class="nav-item">Projects</a></li>
-                <li><a href="#contact" class="nav-item">Contact</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero portrait-box">
+    <section class="hero portrait">
         <div class="hero-content">
-            <h1 class="logo">Tanishq Agrawal</h1>
             <h2>Hi, I'm <span class="highlight">Tanishq Agrawal</span></h2>
             <p>A <span class="highlight">Passionate Developer</span> crafting modern web experiences.</p>
             <a href="resume.pdf" download class="btn glow">Download Resume</a>
@@ -34,20 +35,41 @@
     </section>
 
     <!-- About Me -->
-    <section id="about" class="portrait-box">
+    <section id="about" class="portrait portrait-box">
         <h2 class="section-title">About Me</h2>
         <ul class="about-points">
             <li><span class="highlight">Full Name:</span> Tanishq Agrawal</li>
             <li><span class="highlight">Role:</span> Web Developer focused on responsive and interactive web applications.</li>
-            <li><span class="highlight">Core Skills:</span> HTML, CSS, JavaScript, UI/UX Design, and AI-Powered Web Solutions.</li>
+            <li><span class="highlight">Core Skills:</span> HTML, CSS, JavaScript, UI/UX Design, AI-Powered Web Solutions.</li>
             <li><span class="highlight">Strengths:</span> Modern UI design, problem-solving, and scalable front-end architectures.</li>
             <li><span class="highlight">Current Goal:</span> Expanding to Full-Stack Development and exploring advanced frameworks.</li>
             <li><span class="highlight">Career Vision:</span> To contribute to impactful projects that blend creativity, innovation, and technology.</li>
         </ul>
+
+        <!-- Skills Progress Bars -->
+        <div class="skills">
+            <h3 class="skills-heading">My Skills</h3>
+            <div class="skill">
+                <span>HTML & CSS</span>
+                <div class="progress"><div class="progress-bar" style="--width: 90%"></div></div>
+            </div>
+            <div class="skill">
+                <span>JavaScript</span>
+                <div class="progress"><div class="progress-bar" style="--width: 75%"></div></div>
+            </div>
+            <div class="skill">
+                <span>UI/UX Design</span>
+                <div class="progress"><div class="progress-bar" style="--width: 80%"></div></div>
+            </div>
+            <div class="skill">
+                <span>AI-Powered Tools</span>
+                <div class="progress"><div class="progress-bar" style="--width: 65%"></div></div>
+            </div>
+        </div>
     </section>
 
     <!-- Projects -->
-    <section id="projects" class="portrait-box">
+    <section id="projects" class="portrait portrait-box">
         <h2 class="section-title">My Projects</h2>
         <div class="project-grid">
             <div class="project-card glow">
@@ -66,7 +88,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="portrait-box">
+    <section id="contact" class="portrait portrait-box">
         <h2 class="section-title">Contact Me</h2>
         <p>Email: <a href="mailto:tanishqagrawal1112@gmail.com">tanishqagrawal1112@gmail.com</a></p>
         <p>Phone: <a href="tel:+91930113XXXX">+91 930113XXXX</a></p>
@@ -85,36 +107,33 @@
     <!-- Back to Top -->
     <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- Scripts -->
+    <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Smooth scroll + highlight active section
-        const sections = document.querySelectorAll('section');
-        const navItems = document.querySelectorAll('.nav-item');
+        particlesJS('particles-js', {
+            particles: { number: { value: 60 }, size: { value: 3 }, move: { speed: 1 }, line_linked: { enable: true, color: '#00bcd4' }, color: { value: '#00bcd4' } }
+        });
 
+        // Portrait and Progress Animations
+        const portraits = document.querySelectorAll('.portrait');
+        const progressBars = document.querySelectorAll('.progress-bar');
         window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(sec => {
-                const sectionTop = sec.offsetTop - 200;
-                if (pageYOffset >= sectionTop) current = sec.getAttribute('id');
+            portraits.forEach(el => {
+                if (el.getBoundingClientRect().top < window.innerHeight - 100) el.classList.add('visible');
             });
-            navItems.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) link.classList.add('active');
+            progressBars.forEach(bar => {
+                if (bar.getBoundingClientRect().top < window.innerHeight - 50) {
+                    bar.style.width = bar.style.getPropertyValue('--width');
+                }
             });
         });
 
-        // Back to top
+        // Back to Top Button
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             backToTop.style.display = window.scrollY > 200 ? 'block' : 'none';
         });
         backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-        // Particles.js background
-        particlesJS('particles-js', {
-            particles: { number: { value: 50 }, size: { value: 3 }, move: { speed: 1 }, line_linked: { enable: true, color: '#00bcd4' }, color: { value: '#00bcd4' } }
-        });
     </script>
 </body>
 </html>
