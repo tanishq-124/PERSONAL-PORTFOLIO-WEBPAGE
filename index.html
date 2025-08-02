@@ -1,232 +1,104 @@
-/* Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: 'Segoe UI', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanishq Agrawal | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h1 class="logo">Tanishq Agrawal</h1>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-body {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(40, 40, 40, 0.9)),
-              url('https://e0.pxfuel.com/wallpapers/846/344/desktop-wallpaper-portfolio.jpg') no-repeat center top;
-  background-size: cover;
-  color: #ffffff;
-}
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content portrait">
+            <h2>Hi, I'm Tanishq</h2>
+            <p>A passionate developer crafting modern web experiences.</p>
+            <a href="resume.pdf" download class="btn">Download Resume</a>
+        </div>
+    </section>
 
-/* Header */
-header {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+    <!-- About Section -->
+    <section id="about" class="portrait">
+        <h2>About Me</h2>
+        <p>I am a web developer with a focus on building responsive and user-friendly applications. I love exploring new technologies and creating solutions that make an impact.</p>
+    </section>
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #fff;
-}
+    <!-- Projects Section -->
+    <section id="projects" class="portrait">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>E-LEARNING-PLATFORM-UI</h3>
+                <a href="https://tanishq-124.github.io/E-LEARNING-PLATFORM-UI/" target="_blank">Live Demo</a>
+            </div>
+            <div class="project-card">
+                <h3>INTERACTIVE-QUIZ-APPLICATION</h3>
+                <a href="https://tanishq-124.github.io/INTERACTIVE-QUIZ-APPLICATION/" target="_blank">Live Demo</a>
+            </div>
+            <div class="project-card">
+                <h3>Smart AI Search Portal</h3>
+                <a href="https://tanishq-124.github.io/cs50_project1/" target="_blank">Live Demo</a>
+            </div>
+        </div>
+    </section>
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    <!-- Contact Section -->
+    <section id="contact" class="portrait">
+        <h2>Contact Me</h2>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/tanishq-agrawal-91a505335" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/tanishq-124" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </section>
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Tanishq Agrawal. All Rights Reserved.</p>
+    </footer>
 
-.nav-links a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 500;
-}
+    <!-- Back to Top Button -->
+    <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
-.nav-links a:hover {
-  color: #00bcd4;
-}
+    <script>
+        // Portrait Animation on Scroll
+        const portraits = document.querySelectorAll('.portrait');
+        window.addEventListener('scroll', () => {
+            portraits.forEach((el) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    el.classList.add('visible');
+                }
+            });
+        });
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 7rem 2rem 2rem;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  animation: fadeInDown 1s ease;
-}
-
-.hero p {
-  font-size: 1.3rem;
-  margin: 0.5rem 0 2rem;
-  animation: fadeInUp 1.5s ease;
-}
-
-.btn {
-  background-color: #00bcd4;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  text-decoration: none;
-  border-radius: 25px;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background-color: #0097a7;
-}
-
-/* Social Icons Section (Below View My Projects) */
-.social-row {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 2rem 0;
-}
-
-.social-row a img {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s;
-}
-
-.social-row a:hover img {
-  transform: scale(1.1);
-}
-
-/* About Section */
-.about {
-  text-align: center;
-  padding: 4rem 2rem;
-  background: #111;
-}
-
-.about h2 {
-  margin-bottom: 1rem;
-}
-
-.skills {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin: 1.5rem 0;
-}
-
-.skills li {
-  background: #222;
-  padding: 0.5rem 1.2rem;
-  border-radius: 20px;
-}
-
-.about .btn {
-  display: inline-block;
-  margin-top: 1.5rem;
-}
-
-/* Projects Section */
-.projects {
-  background: url('https://img.freepik.com/premium-photo/top-view-dark-stylish-workplace-with-smartphone-office-supplies_67155-2963.jpg') no-repeat center;
-  background-size: cover;
-  padding: 5rem 2rem;
-  text-align: center;
-  color: #fff;
-}
-
-.projects h2 {
-  margin-bottom: 2rem;
-}
-
-.project-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  max-width: 900px;
-  margin: auto;
-}
-
-.card {
-  background: rgba(0, 0, 0, 0.75);
-  padding: 2rem;
-  border-radius: 15px;
-  transition: 0.3s;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  background-color: #1b1b1b;
-}
-
-.card h3 {
-  font-size: 1.5rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  color: #00bcd4;
-}
-
-.card a {
-  color: #03e9f4;
-  text-decoration: none;
-}
-
-.card a:hover {
-  text-decoration: underline;
-}
-
-/* Contact Section */
-.contact {
-  background: #111;
-  text-align: center;
-  padding: 4rem 2rem;
-}
-
-.contact p {
-  margin: 1rem 0;
-  font-size: 1.1rem;
-}
-
-.contact .social-icons a {
-  display: inline-block;
-  margin: 0 1rem;
-  font-size: 1.1rem;
-  color: #00bcd4;
-}
-
-.contact .social-icons a:hover {
-  color: #03e9f4;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1.5rem;
-  background: #000;
-  color: #aaa;
-}
-
-/* Animations */
-@keyframes fadeInDown {
-  0% { opacity: 0; transform: translateY(-30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeInUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive */
-@media (min-width: 768px) {
-  .project-cards {
-    flex-direction: row;
-    justify-content: center;
-  }
-}
+        // Back to Top Button
+        const backToTop = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+                backToTop.style.display = 'block';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
