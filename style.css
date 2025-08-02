@@ -1,4 +1,4 @@
-/* Fixed Background Image */
+/* Fixed Background */
 #background {
     background: url('https://e0.pxfuel.com/wallpapers/846/344/desktop-wallpaper-portfolio.jpg') no-repeat center center / cover;
     position: fixed;
@@ -20,28 +20,33 @@ body::before {
     background: rgba(0, 0, 0, 0.6);
     z-index: -1;
 }
+
 body {
     margin: 0;
     color: white;
     font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
 }
 
-/* Centered Navigation */
+/* Navigation */
 header {
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 15px 0;
     z-index: 1000;
 }
-nav {
-    display: flex;
-    justify-content: center;
+.logo {
+    font-size: 28px;
+    color: #00bcd4;
+    margin-bottom: 10px;
 }
 .nav-links {
     list-style: none;
     display: flex;
+    justify-content: center;
     gap: 30px;
     padding: 0;
 }
@@ -51,29 +56,32 @@ nav {
     font-weight: bold;
     transition: color 0.3s ease;
 }
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover {
     color: #00bcd4;
 }
 
-/* Portrait Boxes */
-.portrait-box {
+/* Sections */
+section {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 80px 20px;
-    margin: 80px auto;
-    max-width: 900px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
     text-align: center;
+    padding: 100px 20px;
+}
+
+/* Portrait Boxes */
+.portrait-box {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 900px;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
 }
 
 /* Hero Section */
-.hero-content h1 { font-size: 40px; color: #00bcd4; margin-bottom: 10px; }
-.hero-content h2 { font-size: 36px; margin-bottom: 10px; }
+.hero-content h2 { font-size: 40px; margin-bottom: 10px; }
 .hero-content p { font-size: 18px; margin-bottom: 20px; }
 .btn {
     padding: 10px 20px;
@@ -83,9 +91,13 @@ nav {
     border-radius: 5px;
     transition: all 0.3s ease;
 }
-.btn.glow:hover { background: #008c9e; transform: scale(1.1); box-shadow: 0 0 15px #00bcd4; }
+.btn.glow:hover {
+    background: #008c9e;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00bcd4;
+}
 
-/* Sections */
+/* Highlighted Titles */
 .section-title {
     font-size: 36px;
     color: #00bcd4;
@@ -94,15 +106,25 @@ nav {
     padding-bottom: 10px;
 }
 
-/* About Me */
+/* About Section */
 .about-points {
     list-style: none;
     font-size: 18px;
     line-height: 1.8;
-    max-width: 600px;
     text-align: left;
+    max-width: 600px;
 }
 .highlight { color: #00bcd4; }
+
+/* Skills Progress */
+.skills-heading { font-size: 24px; margin-top: 20px; color: #00bcd4; }
+.progress { background: rgba(255, 255, 255, 0.2); border-radius: 10px; overflow: hidden; }
+.progress-bar {
+    height: 10px;
+    background: linear-gradient(90deg, #00bcd4, #008c9e);
+    width: 0;
+    transition: width 2s ease;
+}
 
 /* Projects */
 .project-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
@@ -113,13 +135,20 @@ nav {
     width: 250px;
     transition: all 0.3s ease;
 }
-.project-card.glow:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 0 15px #00bcd4; }
+.project-card.glow:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 15px #00bcd4;
+}
 .project-card a { color: #00bcd4; text-decoration: none; font-weight: bold; }
 
 /* Contact */
 .social-links { display: flex; justify-content: center; gap: 30px; margin-top: 10px; }
 .social-links a { font-size: 30px; color: #00bcd4; transition: transform 0.3s ease; }
 .social-links a:hover { transform: scale(1.2); color: white; }
+
+/* Portrait Animation */
+.portrait { opacity: 0; transform: translateY(50px); transition: all 1s ease-out; }
+.portrait.visible { opacity: 1; transform: translateY(0); }
 
 /* Back to Top */
 #backToTop {
