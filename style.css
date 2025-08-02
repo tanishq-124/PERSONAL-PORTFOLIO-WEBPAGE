@@ -65,11 +65,13 @@ nav {
 .hero-content h2 {
     font-size: 48px;
     margin-bottom: 10px;
+    animation: fadeInDown 1s ease-in-out;
 }
 
 .hero-content p {
     font-size: 20px;
     margin-bottom: 20px;
+    animation: fadeInUp 1.5s ease-in-out;
 }
 
 .btn {
@@ -86,15 +88,28 @@ nav {
     transform: scale(1.1);
 }
 
-/* Unified Background for Content Sections */
+/* Unified Background for About, Projects, Contact */
 .content-wrapper {
     background: url('https://img.freepik.com/premium-photo/top-view-dark-stylish-workplace-with-smartphone-office-supplies_67155-2963.jpg') no-repeat center center/cover;
     background-attachment: fixed;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
 
 section {
     padding: 80px 50px;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 /* Portrait Animation */
@@ -107,6 +122,20 @@ section {
 .portrait.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Highlight Text */
+.highlight {
+    color: #00bcd4;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+/* Animated Headings */
+.animated-heading {
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: slideIn 1.2s ease-out;
 }
 
 /* Projects */
@@ -203,6 +232,27 @@ footer {
     background: rgba(0, 0, 0, 0.7);
     padding: 20px;
     text-align: center;
+}
+
+/* Animations */
+@keyframes pulse {
+    0%, 100% { color: #00bcd4; }
+    50% { color: #ffffff; }
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from { transform: translateY(-30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 /* Responsive */
