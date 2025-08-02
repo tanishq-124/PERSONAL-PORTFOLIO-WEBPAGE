@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Particles and Parallax -->
+    <div id="parallax-bg" data-rellax-speed="-4"></div>
+    <div id="particles-js"></div>
+
     <!-- Navigation -->
     <header>
         <nav>
@@ -25,7 +29,7 @@
         <div class="hero-content">
             <h2>Hi, I'm <span class="highlight">Tanishq Agrawal</span></h2>
             <p>A <span class="highlight">Passionate Developer</span> crafting modern web experiences.</p>
-            <a href="resume.pdf" download class="btn">Download Resume</a>
+            <a href="resume.pdf" download class="btn glow">Download Resume</a>
         </div>
     </section>
 
@@ -67,15 +71,15 @@
     <section id="projects" class="portrait">
         <h2 class="animated-heading">My Projects</h2>
         <div class="project-grid">
-            <div class="project-card">
+            <div class="project-card glow">
                 <h3>E-LEARNING-PLATFORM-UI</h3>
                 <a href="https://tanishq-124.github.io/E-LEARNING-PLATFORM-UI/" target="_blank">Live Demo</a>
             </div>
-            <div class="project-card">
+            <div class="project-card glow">
                 <h3>INTERACTIVE-QUIZ-APPLICATION</h3>
                 <a href="https://tanishq-124.github.io/INTERACTIVE-QUIZ-APPLICATION/" target="_blank">Live Demo</a>
             </div>
-            <div class="project-card">
+            <div class="project-card glow">
                 <h3>Smart AI Search Portal</h3>
                 <a href="https://tanishq-124.github.io/cs50_project1/" target="_blank">Live Demo</a>
             </div>
@@ -100,33 +104,46 @@
 
     <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
+    <!-- JS Libraries -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+
+    <!-- Main Script -->
     <script>
-        // Portrait animation on scroll
+        // Portrait Animation on Scroll
         const portraits = document.querySelectorAll('.portrait');
         const progressBars = document.querySelectorAll('.progress-bar');
         window.addEventListener('scroll', () => {
             portraits.forEach(el => {
                 const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 100) {
-                    el.classList.add('visible');
-                }
+                if (rect.top < window.innerHeight - 100) el.classList.add('visible');
             });
             progressBars.forEach(bar => {
                 const rect = bar.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 50) {
-                    bar.style.width = bar.style.getPropertyValue('--width');
-                }
+                if (rect.top < window.innerHeight - 50) bar.style.width = bar.style.getPropertyValue('--width');
             });
         });
 
-        // Back to Top Button
+        // Back to Top
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
             backToTop.style.display = window.scrollY > 200 ? 'block' : 'none';
         });
-        backToTop.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        // Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 60 },
+                size: { value: 3 },
+                move: { speed: 1 },
+                line_linked: { enable: true, color: '#00bcd4' },
+                color: { value: '#00bcd4' }
+            }
         });
+
+        // Parallax Effect
+        const rellax = new Rellax('#parallax-bg');
     </script>
 </body>
 </html>
