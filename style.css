@@ -1,38 +1,36 @@
-/* Global Styles */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
   font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(40, 40, 40, 0.9)),
-              url('https://e0.pxfuel.com/wallpapers/846/344/desktop-wallpaper-portfolio.jpg') no-repeat center top;
-  background-size: cover;
-  color: #ffffff;
+  color: #fff;
+  background-color: #000;
+  line-height: 1.6;
 }
 
 /* Header */
 header {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #fff;
-}
-
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
 .nav-links {
@@ -42,56 +40,62 @@ nav {
 }
 
 .nav-links a {
-  text-decoration: none;
   color: #fff;
-  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #00bcd4;
+  color: #00adb5;
 }
 
 /* Hero Section */
 .hero {
+  min-height: 100vh;
+  background: url('https://e0.pxfuel.com/wallpapers/846/344/desktop-wallpaper-portfolio.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 7rem 2rem 2rem;
 }
 
-.hero h1 {
+.hero-content h1 {
   font-size: 3rem;
   animation: fadeInDown 1s ease;
 }
 
-.hero p {
-  font-size: 1.3rem;
-  margin: 0.5rem 0 2rem;
+.hero-content p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
   animation: fadeInUp 1.5s ease;
 }
 
 .btn {
-  background-color: #00bcd4;
+  display: inline-block;
+  background: #00adb5;
   color: #fff;
   padding: 0.75rem 1.5rem;
+  border-radius: 5px;
   text-decoration: none;
-  border-radius: 25px;
-  transition: 0.3s;
+  transition: background 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #0097a7;
+  background: #007d88;
 }
 
-/* Social Icons Section (Below View My Projects) */
+/* Social Icons Row (below "View My Projects") */
 .social-row {
   display: flex;
   justify-content: center;
   gap: 2rem;
-  margin: 2rem 0;
+  margin-top: 1.5rem;
 }
 
 .social-row a img {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   transition: transform 0.3s;
 }
 
@@ -101,22 +105,27 @@ nav {
 
 /* About Section */
 .about {
-  text-align: center;
   padding: 4rem 2rem;
-  background: #111;
+  background-color: #111;
+  text-align: center;
 }
 
 .about h2 {
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 
+.about p {
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
 .skills {
-  list-style: none;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin: 1.5rem 0;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
 .skills li {
@@ -126,54 +135,50 @@ nav {
 }
 
 .about .btn {
-  display: inline-block;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
 }
 
 /* Projects Section */
 .projects {
-  background: url('https://img.freepik.com/premium-photo/top-view-dark-stylish-workplace-with-smartphone-office-supplies_67155-2963.jpg') no-repeat center;
-  background-size: cover;
+  background: url('https://img.freepik.com/premium-photo/top-view-dark-stylish-workplace-with-smartphone-office-supplies_67155-2963.jpg') center/cover no-repeat;
   padding: 5rem 2rem;
   text-align: center;
-  color: #fff;
 }
 
 .projects h2 {
+  font-size: 2.5rem;
   margin-bottom: 2rem;
 }
 
 .project-cards {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  max-width: 900px;
-  margin: auto;
+  margin-top: 2rem;
 }
 
 .card {
   background: rgba(0, 0, 0, 0.75);
-  padding: 2rem;
-  border-radius: 15px;
-  transition: 0.3s;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: transform 0.3s;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  background-color: #1b1b1b;
 }
 
 .card h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #00bcd4;
+  color: #00adb5;
 }
 
 .card a {
-  color: #03e9f4;
+  color: #00adb5;
   text-decoration: none;
 }
 
@@ -183,25 +188,35 @@ nav {
 
 /* Contact Section */
 .contact {
-  background: #111;
-  text-align: center;
   padding: 4rem 2rem;
+  background-color: #111;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .contact p {
-  margin: 1rem 0;
-  font-size: 1.1rem;
+  margin: 0.5rem 0;
 }
 
-.contact .social-icons a {
-  display: inline-block;
-  margin: 0 1rem;
-  font-size: 1.1rem;
-  color: #00bcd4;
+.social-icons {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-.contact .social-icons a:hover {
-  color: #03e9f4;
+.social-icons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
 }
 
 /* Footer */
@@ -223,10 +238,12 @@ footer {
   100% { opacity: 1; transform: translateY(0); }
 }
 
-/* Responsive */
-@media (min-width: 768px) {
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
   .project-cards {
-    flex-direction: row;
-    justify-content: center;
+    grid-template-columns: 1fr;
   }
 }
