@@ -15,7 +15,9 @@
 # Personal Portfolio Webpage – Tanishq Agrawal
 
 **Developer:** [Tanishq Agrawal](https://www.linkedin.com/in/tanishq-agrawal-91a505335)
+
 **Live Project:** [Click here to view](https://tanishq-124.github.io/PERSONAL-PORTFOLIO-WEBPAGE/)  
+
 **GitHub Repository:** [Click here to view](https://github.com/tanishq-124/PERSONAL-PORTFOLIO-WEBPAGE)
 
 ---
